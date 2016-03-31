@@ -73,6 +73,7 @@ console.log("*******************************************");
 console.log("");
 console.log("Enumerable Example - mapby ****************");
 console.log("Use `mapBy` to deal with arrays of objects");
+console.log("In this case to output the `name` property of each of the objects.");
 const student = Ember.Object.extend({
     name: 'Erik Hanchett',
     age: 18
@@ -95,4 +96,26 @@ console.log("");
 console.log("Enumerable Example - method - `lastObject`");
 console.log("");
 console.log(students.get('lastObject')); //Kate 
+console.log("*******************************************");
+console.log("");
+console.log("Enumerable Example - method - `firstObject`");
+console.log("");
+console.log(students.get('firstObject')); //Erik 
+console.log("*******************************************");
+console.log("");
+console.log("Enumerable Example - method - `pushObject`");
+console.log("Add an item into the array and then output it.");
+console.log("");
+students.pushObject('Jeff'); 
+console.log(students.get('lastObject')); //Jeff 
+
+
+
+
+
+
+
+
+
+
 export default App;
