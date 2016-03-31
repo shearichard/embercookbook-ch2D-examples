@@ -108,7 +108,35 @@ console.log("Add an item into the array and then output it.");
 console.log("");
 students.pushObject('Jeff'); 
 console.log(students.get('lastObject')); //Jeff 
-
+console.log("*******************************************");
+console.log("");
+console.log("Enumerable Example - use filter on an array of primitives");
+console.log("A very common practice is to take an array and return a filtered list of items.");
+console.log("");
+const array = [1,2,5,10,25,23];  
+const newArray =array.filter(function(item, index, self) {
+    return item > 10;
+})
+console.log(newArray); //[25,23]
+console.log("*******************************************");
+console.log("");
+console.log("Enumerable Example - use filterBy on an array of primitives");
+console.log("A very common practice is to take an array and return a filtered list of items.");
+console.log("Here we filter an array of objects and use `forEach` to confirm the result.");
+console.log("");
+const student = Ember.Object.extend({
+    grade: null,
+      name: null
+});
+const listOfStudents = [
+    student.create({grade: 'senior', name: 'Jen Smith'}),
+    student.create({grade: 'sophmore', name: 'Ben Shine'}),
+    student.create({grade: 'senior', name: 'Ann Cyrus'})
+];
+const newStudent = listOfStudents.filterBy('grade','senior');
+newStudent.forEach(function(item,index){
+    console.log(item.get('name'));
+});
 
 
 
