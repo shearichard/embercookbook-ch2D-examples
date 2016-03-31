@@ -37,15 +37,19 @@ console.log("");
 const secondobj = Ember.Object.extend(common, secondMixin, {
     objprop: 'This is an Ember object Property'
 });
+console.log("*******************************************");
 console.log("Multi Mixin Example***********************");
+console.log("This example outputs a property value from one of the two mixins which the base object uses.");
 console.log("");
 const secondObject = secondobj.create();
 console.log(secondObject.get('secondProperty'));
 
 console.log("*******************************************");
 console.log("");
-
+console.log("*******************************************");
 console.log("Enumerable Example - forEach ************");
+console.log("This iterates through the enumerable, calling the passed function on each item.")
+console.log("In this case the function concatenates 'Student' , the idx, and the value.")
 console.log("");
 const students = ['Erik', 'Jim', 'Shelly', 'Kate'];
 students.forEach(function(item, index) {
@@ -65,7 +69,10 @@ upperCaseStudent.forEach(function(item, index) {
     console.log(`student #${index+1}: ${item}`);
 });
 
-//Use `mapBy` to deal with arrays of objects
+console.log("*******************************************");
+console.log("");
+console.log("Enumerable Example - mapby ****************");
+console.log("Use `mapBy` to deal with arrays of objects");
 const student = Ember.Object.extend({
     name: 'Erik Hanchett',
     age: 18
@@ -85,4 +92,7 @@ console.log(people.mapBy('name'));
 
 console.log("*******************************************");
 console.log("");
+console.log("Enumerable Example - method - `lastObject`");
+console.log("");
+console.log(students.get('lastObject')); //Kate 
 export default App;
